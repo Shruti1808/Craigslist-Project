@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { JobComponent } from './job/job.component';
 import { NewJobComponent } from './new-job/new-job.component';
+import { EditJobComponent } from  './edit-job/edit-job.component';
 
 const appRoutes: Routes = [
   {
@@ -16,6 +17,10 @@ const appRoutes: Routes = [
   {
     path: 'new-job',
     component: NewJobComponent
+  },
+  {
+    path: 'edit-job',
+    component: EditJobComponent
   }
  ];
 

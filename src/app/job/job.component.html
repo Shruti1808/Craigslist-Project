@@ -15,7 +15,10 @@
     </div>
     <br>
     <p>Address: {{job.address}}</p>
+    <button (click)="editButtonClicked(job)">Edit</button>
   </div>
 </div>
 
 <app-new-job (newJobSender)="addJob($event)"></app-new-job>
+
+<app-edit-job (doneButtonClickedSender)=finishedEditing()></app-edit-job>

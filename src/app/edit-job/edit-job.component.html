@@ -1,0 +1,16 @@
+<div *ngIf="selectedJob">
+  <h2>Edit {{selectedJob.name}}</h2>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]= "selectedJob.name">
+    <label>Description: </label>
+    <input [(ngModel)]= "selectedJob.description">
+    <label>Address: </label>
+    <input [(ngModel)]= "selectedJob.address">
+    <label>Duties: </label>
+    <input [(ngModel)]= "selectedJob.duties">
+    <label>Qualifications: </label>
+    <input [(ngModel)]= "selectedJob.qualifications">
+    <button (click)="doneButtonClicked()">Edit</button>
+  </div>
+</div>

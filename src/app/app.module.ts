@@ -8,13 +8,15 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { routing } from './app.routing';
 import { JobComponent } from './job/job.component';
 import { NewJobComponent } from './new-job/new-job.component';
+import { EditJobComponent } from './edit-job/edit-job.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     JobComponent,
-    NewJobComponent
+    NewJobComponent,
+    EditJobComponent
   ],
   imports: [
     BrowserModule,

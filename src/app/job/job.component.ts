@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Job } from '../job.model';
 
 
@@ -7,7 +7,11 @@ import { Job } from '../job.model';
   templateUrl: './job.component.html',
   styleUrls: ['./job.component.css']
 })
+
 export class JobComponent  {
+  @Output() clickSender = new EventEmitter();
+  selectedJob = null;
+
   jobList: Job[] = [
     new Job("Senior UI/UX Developer", "Are you passionate about front-end development, love to explore new technologies, and look at solutions from a user's perspective? Do you have the chops to take our front-end development team to the next level?", "123 First Street Portland Oregon", ["You will be responsible for creating well-written, efficient code using technologies such as Angular/Backbone/React, LESS/SASS, JavaScript, Semantic UI/Material, Flexbox/Grid, HTML5 and a host of other frameworks and development tools.", "You will also work closely with our design and back-end development teams to hone our best practices and define our technology stack for future products."], ["Building cross-browser, responsive, and scalable HTML & CSS", "CSS pre/post-processors such as LESS/SASS, build systems, module loaders, and dependency management", "SOLID JavaScript, DOM and HTML5 experience"]),
 
@@ -16,6 +20,20 @@ export class JobComponent  {
 
   addJob(newJobFromChild: Job) {
     this.jobList.push(newJobFromChild);
+  }
+
+  finishedEditing() {
+    this.selectedJob = null;
+  }
+
+  editJob(clickedJob) {
+    console.log(clickedJob);
+    this.selectedJob = clickedJob;
+  }
+
+  editButtonClicked(jobToEdit: Job) {
+    console.log(jobToEdit);
+    this.clickSender.emit(jobToEdit);
   }
 
 
