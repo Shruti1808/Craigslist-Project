@@ -1,0 +1,14 @@
+<h2>Add a new job</h2>
+<div>
+  <label>Name: </label>
+  <input #newName>
+  <label>Description: </label>
+  <input #newDescription>
+  <label>Address: </label>
+  <input #newAddress>
+  <label>Duties: </label>
+  <input #newDuties>
+  <label>Qualifications: </label>
+  <input #newQualifications>
+  <button class="btn btn-info" (click)="submitForm(newName.value, newDescription.value, newAddress.value, newDuties.value, newQualifications.value)">Add</button>
+</div>
