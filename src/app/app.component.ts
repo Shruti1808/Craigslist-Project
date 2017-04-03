@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Job } from './job.model';
+
 
 @Component({
   selector: 'app-root',
