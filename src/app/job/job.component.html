@@ -1,14 +1,23 @@
-<div *ngFor="let job of jobList">
-  <h3 >{{job.name}}</h3>
-  <p>{{job.description}}</p>
-  <p><strong>Job Responsibilities:</strong></p>
-  <div *ngFor="let duty of job.duties">
-    <li>{{duty}}</li>
+
+
+<div  class = "panel panel-default"*ngFor="let job of jobList">
+  <div class="panel-heading">
+    <h3 (click)="job.currentJob = !job.currentJob" >{{job.name}}</h3>
   </div>
-  <p><strong>Job Qualifications</strong></p>
-  <div *ngFor="let qualification of job.qualifications">
-    <li>{{qualification}}</li>
+
+  <div class=" panel-body job-info" *ngIf = "job.currentJob">
+    <p>{{job.description}}</p>
+    <p><strong>Job Responsibilities:</strong></p>
+    <div *ngFor="let duty of job.duties">
+      <li>{{duty}}</li>
+    </div>
+    <p><strong>Job Qualifications</strong></p>
+    <div *ngFor="let qualification of job.qualifications">
+      <li>{{qualification}}</li>
+    </div>
+    <br>
+    <p>Address: {{job.address}}</p>
   </div>
-  <br>
-  <p>Address: {{job.address}}</p>
+
+
 </div>
